@@ -50,7 +50,13 @@ private static Stream<Arguments> argumentsForAddPositive() {
 
 	@Test
 	void assertThatPairsOfPositiveNumbersAreAddedCorrectly() {
-		//Given: 
+		//Given: two known positive pairs
+		int a = 40;
+		int b = 20;
+		int expected = 60;
+		//when: the method activates
+		//then: the pair is added together correctly
+		assertThat(td.addPositive(a, b)).isEqualTo(expected);
 	}
 
 }
