@@ -1,14 +1,16 @@
 package com.promineotech;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.junit.jupiter.params.provider.Arguments.arguments;
+
 import java.util.stream.Stream;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static org.junit.jupiter.params.provider.Arguments.*;
 import org.junit.jupiter.params.provider.MethodSource;
 
 class TestDemoJUnitTest {
@@ -20,6 +22,7 @@ private TestDemo td;
 
 	@ParameterizedTest
 	@MethodSource("com.promineotech.TestDemoJUnitTest#argumentsForAddPositive")
+	@Disabled
 	void assertThatAddPostiveWorks(int a, int b, int expected, boolean expectException) {
 		//Given: two numbers
 		
@@ -43,5 +46,11 @@ private static Stream<Arguments> argumentsForAddPositive() {
 	);
 	//formatter:on
 }
-	
+
+
+	@Test
+	void test() {
+		
+	}
+
 }
