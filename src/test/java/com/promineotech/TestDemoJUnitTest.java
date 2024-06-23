@@ -19,7 +19,7 @@ private TestDemo td;
 	}
 
 	@ParameterizedTest
-	@MethodSource()
+	@MethodSource("com.promineotech.TestDemoJUnitTest#argumentsForAddPositive")
 	void assertThatAddPostiveWorks(int a, int b, int expected, boolean expectException) {
 		//Given: two numbers
 		
@@ -33,10 +33,12 @@ private TestDemo td;
 		assertThatThrownBy(() -> td.addPositive(a, b)).isInstanceOf(IllegalArgumentException.class);
 	}
 
-private Stream<Arguments> addPositiveArguments() {
+private static Stream<Arguments> argumentsForAddPositive() {
 	//formatter:off
 	return Stream.of(
-			arguments()
+			arguments(2, 4, 6, false),
+			arguments(0, 1, 0, true),
+			arguments(3, -2, 0, true)
 	);
 	//formatter:on
 }

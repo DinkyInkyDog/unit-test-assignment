@@ -1,5 +1,7 @@
 package com.promineotech;
 
+import com.google.common.annotations.VisibleForTesting;
+
 public class TestDemo {
 
 	public static void main(String[] args) {
@@ -18,7 +20,8 @@ public class TestDemo {
 	 * @param b
 	 * @return 
 	 */
-public int addPositive(int a, int b) {
+	@VisibleForTesting
+	int addPositive(int a, int b) {
 	return 0;
 }
 }
