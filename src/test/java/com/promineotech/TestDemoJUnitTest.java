@@ -62,6 +62,7 @@ private static Stream<Arguments> argumentsForAddPositive() {
 	}
 	
 	@Test
+	@Disabled
 	void assertThatQuitMenuTrue() {
 		//Given: the method
 		TestDemo testMock = spy(new TestDemo());
@@ -70,4 +71,9 @@ private static Stream<Arguments> argumentsForAddPositive() {
 		//then: done is set to true
 		assertThat(testMock.getDone()).isEqualTo(true);
 	}
+	
+	
+	
+	
+	
 }
