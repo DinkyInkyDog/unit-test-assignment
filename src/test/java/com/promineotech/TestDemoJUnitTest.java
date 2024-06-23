@@ -27,10 +27,11 @@ private TestDemo td;
 			//when: if the numbers are positive, you add the two numbers together
 			//then: return the sum of the two positive numbers
 			assertThat(td.addPositive(a, b)).isEqualTo(expected);
-		}
+		} else {
 		//when: if the numbers are negative or zero, you don't add the numbers
 		//then: throw an IllegalArgumentException.
 		assertThatThrownBy(() -> td.addPositive(a, b)).isInstanceOf(IllegalArgumentException.class);
+		}
 	}
 
 private static Stream<Arguments> argumentsForAddPositive() {
