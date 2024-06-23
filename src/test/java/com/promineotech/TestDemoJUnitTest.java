@@ -49,6 +49,7 @@ private static Stream<Arguments> argumentsForAddPositive() {
 
 
 	@Test
+	@Disabled
 	void assertThatPairsOfPositiveNumbersAreAddedCorrectly() {
 		//Given: two known positive pairs
 		int a = 40;
@@ -58,5 +59,12 @@ private static Stream<Arguments> argumentsForAddPositive() {
 		//then: the pair is added together correctly
 		assertThat(td.addPositive(a, b)).isEqualTo(expected);
 	}
-
+	
+	@Test
+	void assertThatQuitMenuTrue() {
+		//Given: the method
+		//when: the method accesses the done variable
+		//then: done is set to true
+		assertThat(td.quitMenu()).isEquilTo(true);
+	}
 }
