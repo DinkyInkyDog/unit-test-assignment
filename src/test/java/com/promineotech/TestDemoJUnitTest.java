@@ -3,6 +3,7 @@ package com.promineotech;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
+import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.spy;
 
 import java.util.stream.Stream;
@@ -72,7 +73,18 @@ private static Stream<Arguments> argumentsForAddPositive() {
 		assertThat(testMock.getDone()).isEqualTo(true);
 	}
 	
-	
+	@Test
+	@Disabled
+	void assertThatNumberSquaredIsCorrect() {
+		//Given: a number between 1 and 10
+		int randomNumMock = 4;
+		TestDemo testDemoMock = spy(new TestDemo());
+		//When: the method runs
+		doReturn(randomNumMock).when(testDemoMock).getRandomInt();
+		int randomSquared = testDemoMock.randomNumberSquared();
+		//then: we'll get the squared version of that number
+		assertThat(randomSquared).isEqualTo(randomNumMock * randomNumMock);
+	}
 	
 	
 	

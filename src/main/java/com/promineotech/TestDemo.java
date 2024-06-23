@@ -52,7 +52,8 @@ private boolean done = false;
 		return randomNum * randomNum;
 	}
 
-	private int getRandomInt() {
+	@VisibleForTesting
+	int getRandomInt() {
 
 		Random random = new Random();
 
