@@ -3,7 +3,8 @@ package com.promineotech;
 import com.google.common.annotations.VisibleForTesting;
 
 public class TestDemo {
-
+private boolean done = false;
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -28,5 +29,13 @@ public class TestDemo {
 		throw new IllegalArgumentException("Both parameters must be positive!");
 		}
 }
+	public boolean getDone() {
+		return done;
+	}
+	@VisibleForTesting
+	void quitMenu() {
+		done = true;
+	}
+	
 	
 }

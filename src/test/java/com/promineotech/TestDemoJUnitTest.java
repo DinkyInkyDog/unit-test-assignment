@@ -3,6 +3,7 @@ package com.promineotech;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
+import static org.mockito.Mockito.spy;
 
 import java.util.stream.Stream;
 
@@ -63,6 +64,7 @@ private static Stream<Arguments> argumentsForAddPositive() {
 	@Test
 	void assertThatQuitMenuTrue() {
 		//Given: the method
+		TestDemo tdMock = spy();
 		//when: the method accesses the done variable
 		//then: done is set to true
 		assertThat(td.quitMenu()).isEquilTo(true);
