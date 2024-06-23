@@ -49,8 +49,8 @@ private static Stream<Arguments> argumentsForAddPositive() {
 
 
 	@Test
-	void test() {
-		
+	void assertThatPairsOfPositiveNumbersAreAddedCorrectly() {
+		//Given: 
 	}
 
 }
